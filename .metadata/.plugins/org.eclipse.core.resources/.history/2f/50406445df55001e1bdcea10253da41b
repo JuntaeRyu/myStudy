@@ -1,0 +1,7 @@
+package com.ryu.app;
+
+public class BoardDTO {
+	private int num;
+	private String writer;
+	private String content;
+}

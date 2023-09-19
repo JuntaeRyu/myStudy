@@ -1,0 +1,14 @@
+package test;
+
+public class Person {
+	private String name;
+	private Phone phone;
+	
+	public Person() {
+		
+	}
+	public Person(String name, Phone phone) {
+		
+	}
+	
+}

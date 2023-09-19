@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset = "UTF-8">
+      <title>메인페이지</title>
+   </head>
+   <body>
+      <form action="singup.do" method="POST">
+      	ID <input type="text" name="mid" value="저주합니다 노.기.봉"> <br>
+      	PW <input type="password" name="mpw"> <br>
+      	<input type="submit">
+      </form>
+      
+   </body>
+</html>

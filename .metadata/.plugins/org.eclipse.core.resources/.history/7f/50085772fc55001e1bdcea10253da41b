@@ -1,0 +1,14 @@
+server.port=8088
+
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+
+
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+# com.mysql.cj.jdbc.Driver
+# oracle.jdbc.OracleDriver
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521/xe
+# jdbc:mysql://localhost:3306/ryudb
+# jdbc:oracle:thin:@localhost:1521/xe
+spring.datasource.username=RYU
+spring.datasource.password=1234

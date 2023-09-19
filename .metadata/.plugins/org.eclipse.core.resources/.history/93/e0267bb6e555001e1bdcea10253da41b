@@ -1,0 +1,49 @@
+package com.ryu.app;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class MemberDAO {
+	
+	// 의존 관계(멤버변수)
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	
+	// 응집도를 높여주기
+	private final String SELECTALL="SELECT * FROM MEMBER";
+	private final String SELECTONE="SELECT * FROM MEMBER WHERE MID=?";
+	private final String INSERT="";
+	private final String UPDATE="";
+	private final String DELETE="";
+	
+	
+	public List<MemberDTO> selectAll(MemberDTO mDTO){
+		// 반복적인 로직을 대신 수행하는 "템플릿 패턴"을 활용
+//		jdbcTemplate.query(query문, new 받아올클래스타입)
+		jdbcTemplate.query(SELECTALL, new BeanPropertyRowMapper<MemberDTO>(MemberDTO.class));
+		return null;
+	}
+	public MemberDTO selectOne(MemberDTO mDTO){
+		Object args[]= {mDTO.getMid()};
+		return jdbcTemplate.queryForObject(SELECTONE, args, new BeanPropertyRowMapper<MemberDTO>(MemberDTO.class));
+		
+	}
+	public boolean insert(MemberDTO mDTO) {
+		jdbcTemplate.update(INSERT);
+		return false;
+	}
+	public boolean update(MemberDTO mDTO) {
+		jdbcTemplate.update(UPDATE);
+		return false;
+	}
+	public boolean delete(MemberDTO mDTO) {
+		jdbcTemplate.update(DELETE);
+		return false;
+	}
+	
+}

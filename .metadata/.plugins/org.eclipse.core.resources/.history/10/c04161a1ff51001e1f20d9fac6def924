@@ -1,0 +1,21 @@
+package com.ryu.app;
+
+import org.springframework.context.ApplicationContext;
+
+/////@SpringBootApplication
+public class Test01Application {
+
+	public static void main(String[] args) {
+		/////SpringApplication.run(Test01Application.class, args);
+
+		// 1. 스프링 IoC 컨테이너 구동시키기
+		// 1-2. 컨테이너를 구동시킬때에 설정파일이 필요함
+		//	(스프링에서는 .xml / 부트에선ㄴ .java
+		ApplicationContext ac= new AnotationConfigApplicationContext;
+		
+		Person person1 = (Person)ac.getBean("person1");
+		Persoj print();
+		
+	}
+
+}

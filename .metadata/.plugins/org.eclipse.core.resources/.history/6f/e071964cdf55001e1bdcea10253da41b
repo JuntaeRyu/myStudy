@@ -1,0 +1,10 @@
+package com.ryu.app;
+
+import lombok.Data;
+
+@Data
+public class BoardDTO {
+	private int num;	//pk
+	private String mid;	//fk
+	private String content;
+}

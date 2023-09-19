@@ -1,0 +1,23 @@
+package com.ryu.app;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class CTRL {
+
+	@RequestMapping("/")
+	public @ResponseBody String root() {
+		return "루트요청";
+	}
+	
+	@RequestMapping("/test")
+	public String test(VO vo, Model model) {
+		System.out.println("vo: "+vo);
+		model.addAttribute("apple",vo.getId());
+		
+		return "test";
+	}
+}

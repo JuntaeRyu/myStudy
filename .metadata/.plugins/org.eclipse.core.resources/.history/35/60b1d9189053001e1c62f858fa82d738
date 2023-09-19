@@ -1,0 +1,55 @@
+package com.ryu.app;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class CTRL {
+
+//	public boolean 모듈화(VO vo) {
+//		if(vo.getId() == null || vo.getId().isEmpty() || vo.getId().isBlank() ||vo.getId().equals("")) {
+//
+//		}
+//		if(vo.getPassword().length()<=5) {
+//
+//		}
+//	}
+
+
+	@RequestMapping("/")
+	public String root() {
+		return "test";
+	}
+	
+	@RequestMapping("/test")	// requestPost 써도되지만 하나밖에없기때문에 구분 x
+	public String test(VO vo, BindingResult br, Model model) {
+		/////
+		VOValidator voV=new VOValidator();
+		voV.validate(vo, br);	// br는 커맨드 객체(참조 변수) 여러개의 reject상황을 반환하기 위해 사용
+		if(br.hasErrors()) {
+			System.out.println("발생한 에러목록");
+			System.out.println(br.getAllErrors());	// for문과 잘어울림
+			
+			if(br.getFieldError("id") != null) {	// id에서 Error가 발생했다는 의미
+				System.out.println(br.getFieldError("id").getCode());
+			}
+			if(br.getFieldError("password") != null) {	// password에서 Error가 발생했다는 의미
+				System.out.println(br.getFieldError("password").getCode());
+			}
+			
+		}
+		/////
+		model.addAttribute("apple", vo.getId());
+		return "test";
+	}
+	
+	@InitBinder
+	protected void initBinder(WebDataBinder wdb) {
+		wdb.setValidator(new VOValidator());
+	}
+
+}

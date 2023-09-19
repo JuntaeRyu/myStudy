@@ -1,0 +1,33 @@
+package com.ryu.app;
+
+import java.util.List;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class MemberDAO {
+	
+	// 의존 관계(멤버변수)
+	private JdbcTemplate jdbcTemplate;
+	
+	public List<MemberDTO> selectAll(MemberDTO mDTO){
+		
+		return null;
+	}
+	public MemberDTO selectOne(MemberDTO mDTO){
+		
+		return null;
+	}
+	public boolean insert(MemberDTO mDTO) {
+		
+		return false;
+	}
+	public boolean update(MemberDTO mDTO) {
+		
+		return false;
+	}
+	public boolean delete(MemberDTO mDTO) {
+		
+		return false;
+	}
+	
+}

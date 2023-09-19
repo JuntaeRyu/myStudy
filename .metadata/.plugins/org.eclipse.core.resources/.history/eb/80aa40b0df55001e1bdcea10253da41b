@@ -1,0 +1,22 @@
+package com.ryu.app;
+
+import java.util.List;
+
+public class MemberDAO {
+	public List<MemberDTO> selectAll(MemberDTO){
+		
+	}
+	public MemberDTO selectOne(MemberDTO){
+		
+	}
+	public boolean insert(MemberDTO) {
+		
+	}
+	public boolean update(MemberDTO) {
+		
+	}
+	public boolean delete(MemberDTO) {
+		
+	}
+	
+}
