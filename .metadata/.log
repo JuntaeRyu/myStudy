@@ -9033,3 +9033,20 @@ Java Model Exception: Error in Java Model (code 969): TEST05_1 does not exist
 
 !ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-20 10:09:25.355
 !MESSAGE Boot project ADDED: TEST05_1
+
+!ENTRY org.eclipse.egit.core 4 0 2023-09-20 10:11:37.903
+!MESSAGE An exception occurred during push on URI https://github.com/JuntaeRyu/myStudy.git: https://github.com/JuntaeRyu/myStudy.git: not authorized
+!STACK 0
+org.eclipse.jgit.errors.TransportException: https://github.com/JuntaeRyu/myStudy.git: not authorized
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:696)
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:638)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:541)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:138)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1537)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:269)
+	at org.eclipse.egit.ui.internal.push.PushJob.performJob(PushJob.java:86)
+	at org.eclipse.egit.ui.internal.jobs.RepositoryJob.run(RepositoryJob.java:59)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2023-09-20 10:11:37.904
+!MESSAGE Can't connect to any repository: https://github.com/JuntaeRyu/myStudy.git (https://github.com/JuntaeRyu/myStudy.git: not authorized)
