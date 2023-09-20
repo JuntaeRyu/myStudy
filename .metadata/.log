@@ -9050,3 +9050,51 @@ org.eclipse.jgit.errors.TransportException: https://github.com/JuntaeRyu/myStudy
 
 !ENTRY org.eclipse.egit.ui 4 0 2023-09-20 10:11:37.904
 !MESSAGE Can't connect to any repository: https://github.com/JuntaeRyu/myStudy.git (https://github.com/JuntaeRyu/myStudy.git: not authorized)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-20 10:22:50.909
+!MESSAGE Classpath changed for project: TEST05_1
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-20 10:27:21.411
+!MESSAGE Classpath changed for project: TEST01
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-20 10:27:21.412
+!MESSAGE Boot project ADDED: TEST01
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-20 10:27:21.414
+!MESSAGE Classpath changed for project: Test01
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-20 10:27:21.414
+!MESSAGE Boot project REMOVED: Test01
+
+!ENTRY org.eclipse.buildship.core 2 0 2023-09-20 10:27:21.417
+!MESSAGE Listener org.eclipse.buildship.core.internal.preferences.DefaultModelPersistence failed to handle org.eclipse.buildship.core.internal.workspace.ProjectMovedEvent
+!STACK 0
+java.lang.IllegalArgumentException: Source D:\RYU\workspace\.metadata\.plugins\org.eclipse.buildship.core\project-preferences\Test01 and destination D:\RYU\workspace\.metadata\.plugins\org.eclipse.buildship.core\project-preferences\TEST01 must be different
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:435)
+	at com.google.common.io.Files.move(Files.java:504)
+	at org.eclipse.buildship.core.internal.preferences.DefaultModelPersistence.movePreferencesFile(DefaultModelPersistence.java:115)
+	at org.eclipse.buildship.core.internal.preferences.DefaultModelPersistence.onEvent(DefaultModelPersistence.java:88)
+	at org.eclipse.buildship.core.internal.event.DefaultListenerRegistry.dispatch(DefaultListenerRegistry.java:50)
+	at org.eclipse.buildship.core.internal.workspace.ProjectChangeListener.doVisitDelta(ProjectChangeListener.java:77)
+	at org.eclipse.buildship.core.internal.workspace.ProjectChangeListener$1.visit(ProjectChangeListener.java:56)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:67)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:51)
+	at org.eclipse.buildship.core.internal.workspace.ProjectChangeListener.visitDelta(ProjectChangeListener.java:51)
+	at org.eclipse.buildship.core.internal.workspace.ProjectChangeListener.resourceChanged(ProjectChangeListener.java:43)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:307)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:297)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:160)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:388)
+	at org.eclipse.core.internal.resources.Workspace.checkpoint(Workspace.java:584)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.lambda$0(PerformChangeOperation.java:263)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2382)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2407)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:295)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:94)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:219)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2382)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2407)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:89)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
