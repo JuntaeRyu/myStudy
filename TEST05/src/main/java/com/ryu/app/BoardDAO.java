@@ -30,8 +30,10 @@ public class BoardDAO {
       System.out.println("log" + bDTO);
       Object[] args = { bDTO.getBid()};
 
-      return jdbcTemplate.queryForObject(SELECTONE, args, new BeanPropertyRowMapper<BoardDTO>(BoardDTO.class));
+      return jdbcTemplate.queryForObject(SELECTONE, new BeanPropertyRowMapper<BoardDTO>(BoardDTO.class), args);
    }
+   
+   
    public boolean insert(BoardDTO bDTO) {
 
       int rs = jdbcTemplate.update(INSERT, bDTO.getMid(), bDTO.getContent());
